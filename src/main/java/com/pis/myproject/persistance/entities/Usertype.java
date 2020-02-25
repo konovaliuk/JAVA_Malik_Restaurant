@@ -19,18 +19,5 @@ public class Usertype {
     private int typeId;
     private String type;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Usertype that = (Usertype) o;
-        return Objects.equals(typeId, that.typeId) &&
-                Objects.equals(type, that.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(typeId, type);
-    }
 
 }

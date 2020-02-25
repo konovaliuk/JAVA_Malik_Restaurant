@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -18,26 +17,15 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer quantity;
+    private Integer recipt_id;
+    private Integer menu_id;
     private Integer preSum;
 
-    public Orders(Integer quantity, Integer preSum){
+    public Orders(Integer recipt_id, Integer menu_id, Integer quantity, Integer preSum){
+        this.recipt_id = recipt_id;
+        this.menu_id = menu_id;
         this.quantity = quantity;
         this.preSum = preSum;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Orders orders = (Orders) o;
-        return Objects.equals(id, orders.id) &&
-                Objects.equals(quantity, orders.quantity) &&
-                Objects.equals(preSum, orders.preSum);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, quantity, preSum);
     }
 
     @Override

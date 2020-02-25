@@ -7,10 +7,10 @@ import java.util.Optional;
 
 public interface IUsertype {
 
-    public List<Usertype> findAll();
+    List<Usertype> findAll();
 
-    public Optional<Usertype> findByTypeId(Integer typeId);
+    Optional<Usertype> findByTypeId(Integer typeId);
 
-    public List<Usertype> findByType(String type);
+    List<Usertype> findByType(String type);
 
 }

@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface IOrders {
 
-    public List<Orders> findAll();
+    List<Orders> findAll();
 
-    public Optional<Orders> findById(Integer id);
+    Optional<Orders> findById(Integer id);
 
 }

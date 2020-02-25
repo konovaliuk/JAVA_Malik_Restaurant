@@ -8,7 +8,4 @@ import java.util.Optional;
 
 public interface OrdersRepository extends CrudRepository<Orders, Integer> {
 
-    public List<Orders> findAll();
-    public Optional<Orders> findById(Integer id);
-
 }

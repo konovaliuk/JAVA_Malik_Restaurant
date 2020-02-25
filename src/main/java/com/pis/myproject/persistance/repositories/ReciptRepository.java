@@ -9,10 +9,6 @@ import java.util.Optional;
 
 public interface ReciptRepository extends CrudRepository<Recipt, Integer> {
 
-    public List<Recipt> findAll();
-
-    public Optional<Recipt> findById(Integer reciptId);
-
-    public List<Recipt> findByReciptDate(Timestamp reciptDate);
+    List<Recipt> findByReciptDate(Timestamp reciptDate);
 
 }

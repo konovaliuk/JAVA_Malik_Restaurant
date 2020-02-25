@@ -8,9 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface MenuRepository extends CrudRepository<Menu, Integer> {
 
-    public List<Menu> findAll();
-    public List<Menu> findByTitle(String title);
-    public List<Menu> findByPrice(Integer price);
-    public Optional<Menu> findById(Integer menuId);
+    List<Menu> findAll();
+    List<Menu> findByTitle(String title);
+    List<Menu> findByPrice(Integer price);
 
 }

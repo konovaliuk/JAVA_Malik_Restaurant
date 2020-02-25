@@ -7,10 +7,10 @@ import java.util.Optional;
 
 public interface IUsers {
 
-    public List<Users> findAll();
+    List<Users> findAll();
 
-    public Optional<Users> findByUserId(Integer userId);
+    Optional<Users> findByUserId(Integer userId);
 
-    public List<Users> findByLogin(String login);
+    List<Users> findByLogin(String login);
 
 }

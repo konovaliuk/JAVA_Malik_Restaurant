@@ -3,13 +3,16 @@ package com.pis.myproject.persistance.interfcs;
 import com.pis.myproject.persistance.entities.Menu;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IMenu {
 
-    public List<Menu> findAll();
+    List<Menu> findAll();
 
-    public List<Menu> findByTitle(String title);
+    List<Menu> findByTitle(String title);
 
-    public List<Menu> findByPrice(Integer price);
+    List<Menu> findByPrice(Integer price);
+
+    Optional<Menu> findById(Integer menuId);
 
 }

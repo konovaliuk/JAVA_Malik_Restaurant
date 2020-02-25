@@ -8,10 +8,6 @@ import java.util.Optional;
 
 public interface UsertypeRepository extends CrudRepository<Usertype, Integer> {
 
-    public List<Usertype> findAll();
-
-    public Optional<Usertype> findByTypeId(Integer typeId);
-
-    public List<Usertype> findByType(String type);
+    List<Usertype> findByType(String type);
 
 }

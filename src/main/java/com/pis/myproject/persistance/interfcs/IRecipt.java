@@ -8,10 +8,10 @@ import java.util.Optional;
 
 public interface IRecipt {
 
-    public List<Recipt> findAll();
+    List<Recipt> findAll();
 
-    public Optional<Recipt> findById(Integer reciptId);
+    Optional<Recipt> findById(Integer reciptId);
 
-    public List<Recipt> findByReciptDate(Timestamp reciptDate);
+    List<Recipt> findByReciptDate(Timestamp reciptDate);
 
 }
