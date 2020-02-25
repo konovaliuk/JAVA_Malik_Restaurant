@@ -28,11 +28,4 @@ public class Orders {
         this.preSum = preSum;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Orders[id=%d, quantity='%s', preSum='%s']",
-                id, quantity, preSum);
-    }
-
 }

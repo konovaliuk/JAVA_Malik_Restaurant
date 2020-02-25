@@ -13,4 +13,6 @@ public interface IUsers {
 
     List<Users> findByLogin(String login);
 
+    void save(Users users);
+
 }

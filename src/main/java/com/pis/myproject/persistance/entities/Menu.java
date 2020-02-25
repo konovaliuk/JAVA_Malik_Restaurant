@@ -26,11 +26,4 @@ public class Menu {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Menu[id=%d, title='%s', price='%s']",
-                menuId, title, price);
-    }
-
 }

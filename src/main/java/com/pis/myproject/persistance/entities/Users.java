@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "users", schema = "restaurant")
 @Data
@@ -19,7 +18,7 @@ public class Users{
     private Integer userId;
     private String name;
     private String surname;
-    private Integer userType;
+    private Integer user_type;
     private String login;
     private String pass;
 

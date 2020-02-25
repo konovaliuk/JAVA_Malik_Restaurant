@@ -29,4 +29,9 @@ public class UsersImpl implements IUsers {
         return usersRepository.findByLogin(login);
     }
 
+    @Override
+    public void save(Users users) {
+        usersRepository.save(users);
+    }
+
 }
