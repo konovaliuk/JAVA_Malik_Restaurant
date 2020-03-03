@@ -15,7 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UsersImpl implements IUsers {
 
-    private UsersRepository usersRepository;
+    private final UsersRepository usersRepository;
 
     public List<Users> findAll() {
         return (List<Users>) usersRepository.findAll();

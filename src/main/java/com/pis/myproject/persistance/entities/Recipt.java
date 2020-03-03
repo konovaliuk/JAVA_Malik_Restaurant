@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,16 +17,21 @@ public class Recipt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "recipt_id")
     private Integer reciptId;
-    private Integer admin_id;
-    private Integer client_id;
+    @Column(name = "Sum")
     private Integer sum;
+    @Column(name = "recipt_date")
     private Timestamp reciptDate;
 
-    public Recipt(Integer admin_id, Integer client_id, Integer sum){
-        this.admin_id = admin_id;
-        this.client_id = client_id;
-        this.sum = sum;
-    }
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name="admin_id", referencedColumnName="user_id"),
+            @JoinColumn(name="client_id", referencedColumnName="user_id")
+    })
+    private Users users;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipt")
+    private List<Orders> orders;
 
 }

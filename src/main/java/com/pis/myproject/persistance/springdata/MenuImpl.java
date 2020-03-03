@@ -20,7 +20,7 @@ public class MenuImpl implements IMenu {
     private final MenuRepository menuRepository;
 
     public List<Menu> findAll() {
-        return menuRepository.findAll();
+        return (List<Menu>) menuRepository.findAll();
     }
 
     public List<Menu> findByTitle(String title) {
@@ -32,5 +32,20 @@ public class MenuImpl implements IMenu {
     }
 
     public Optional<Menu> findById(Integer menuId) { return menuRepository.findById(menuId); }
+
+    @Override
+    public List<Menu> findByTitleAndPrice(String title, Integer price) {
+        return menuRepository.findByTitleAndPrice(title, price);
+    }
+
+    @Override
+    public void deleteById(Integer menuId) {
+        menuRepository.deleteById(menuId);
+    }
+
+    @Override
+    public void save(Menu menu) {
+        menuRepository.save(menu);
+    }
 
 }

@@ -17,7 +17,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class OrdersImpl implements IOrders {
 
-    private OrdersRepository ordersRepository;
+    private final OrdersRepository ordersRepository;
 
     public List<Orders> findAll() {
         return (List<Orders>) ordersRepository.findAll();

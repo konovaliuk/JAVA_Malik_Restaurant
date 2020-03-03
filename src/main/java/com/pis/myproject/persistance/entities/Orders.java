@@ -15,17 +15,19 @@ public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "quantity")
     private Integer quantity;
-    private Integer recipt_id;
-    private Integer menu_id;
+    @Column(name = "pre_sum")
     private Integer preSum;
 
-    public Orders(Integer recipt_id, Integer menu_id, Integer quantity, Integer preSum){
-        this.recipt_id = recipt_id;
-        this.menu_id = menu_id;
-        this.quantity = quantity;
-        this.preSum = preSum;
-    }
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "menu_id", name = "menu_id")
+    private Menu menu;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "recipt_id", name = "recipt_id")
+    private Recipt recipt;
 
 }

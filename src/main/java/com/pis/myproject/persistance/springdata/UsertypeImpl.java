@@ -17,7 +17,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UsertypeImpl implements IUsertype {
     
-    private UsertypeRepository usertypeRepository;
+    private final UsertypeRepository usertypeRepository;
 
     public List<Usertype> findAll() {
         return (List<Usertype>) usertypeRepository.findAll();

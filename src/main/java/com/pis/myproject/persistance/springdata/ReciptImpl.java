@@ -18,7 +18,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ReciptImpl implements IRecipt {
 
-    private ReciptRepository reciptRepository;
+    private final ReciptRepository reciptRepository;
 
     public List<Recipt> findAll() {
         return (List<Recipt>) reciptRepository.findAll();

@@ -15,5 +15,9 @@ public interface IMenu {
 
     Optional<Menu> findById(Integer menuId);
 
+    List<Menu> findByTitleAndPrice(String title, Integer price);
 
+    void deleteById(Integer menuId);
+
+    void save(Menu menu);
 }
