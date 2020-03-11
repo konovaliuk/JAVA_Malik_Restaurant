@@ -1,5 +1,6 @@
 package com.pis.myproject.persistance.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,7 +26,8 @@ public class Menu {
     @Column(name = "Price")
     private Integer price;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "menu")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "menu",cascade = CascadeType.DETACH)
+    @JsonIgnore
     private List<Orders> orders;
 
 //    public Menu(String title, Integer price){
@@ -33,12 +35,5 @@ public class Menu {
 //        this.price=price;
 //    }
 
-    @Override
-    public String toString() {
-        return "Menu{" +
-                "menuId=" + menuId +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                '}';
-    }
+
 }

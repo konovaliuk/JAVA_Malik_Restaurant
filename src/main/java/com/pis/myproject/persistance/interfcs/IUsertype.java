@@ -1,5 +1,6 @@
 package com.pis.myproject.persistance.interfcs;
 
+import com.pis.myproject.persistance.entities.Users;
 import com.pis.myproject.persistance.entities.Usertype;
 
 import java.util.List;
@@ -11,6 +12,6 @@ public interface IUsertype {
 
     Optional<Usertype> findByTypeId(Integer typeId);
 
-    List<Usertype> findByType(String type);
+    List<Users> findByType(String type);
 
 }

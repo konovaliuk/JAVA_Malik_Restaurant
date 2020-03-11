@@ -44,8 +44,8 @@ public class MenuImpl implements IMenu {
     }
 
     @Override
-    public void save(Menu menu) {
-        menuRepository.save(menu);
+    public Menu save(Menu menu) {
+        return menuRepository.save(menu);
     }
 
 }

@@ -11,4 +11,6 @@ public interface IOrders {
 
     Optional<Orders> findById(Integer id);
 
+    void save(Orders orders);
+
 }

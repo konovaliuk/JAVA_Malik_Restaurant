@@ -1,5 +1,6 @@
 package com.pis.myproject.persistance.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class Users implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,19 +33,12 @@ public class Users {
     @JoinColumn(referencedColumnName = "type_id", name = "user_type")
     private Usertype usertype;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Recipt> recipt;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "client")
+    @JsonIgnore
+    private List<Recipt> clientRecipt;
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "userId=" + userId +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", login='" + login + '\'' +
-                ", pass='" + pass + '\'' +
-//                ", usertype=" + usertype +
-//                ", recipt=" + recipt +
-                '}';
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "admin")
+    @JsonIgnore
+    private List<Recipt> adminRecipt;
+
 }

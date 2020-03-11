@@ -27,4 +27,9 @@ public class OrdersImpl implements IOrders {
         return ordersRepository.findById(id);
     }
 
+    @Override
+    public void save(Orders orders) {
+        ordersRepository.save(orders);
+    }
+
 }

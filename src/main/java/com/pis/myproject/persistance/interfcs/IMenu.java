@@ -19,5 +19,5 @@ public interface IMenu {
 
     void deleteById(Integer menuId);
 
-    void save(Menu menu);
+    Menu save(Menu menu);
 }

@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IUsers {
 
-    Iterable<Users> findAll();
+    List<Users> findAll();
 
     Optional<Users> findByUserId(Integer userId);
 

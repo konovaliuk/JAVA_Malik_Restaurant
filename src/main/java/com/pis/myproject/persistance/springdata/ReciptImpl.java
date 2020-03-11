@@ -32,4 +32,9 @@ public class ReciptImpl implements IRecipt {
         return reciptRepository.findByReciptDate(reciptDate);
     }
 
+    @Override
+    public void save(Recipt recipt) {
+        reciptRepository.save(recipt);
+    }
+
 }

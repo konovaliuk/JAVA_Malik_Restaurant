@@ -17,10 +17,6 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "quantity")
-    private Integer quantity;
-    @Column(name = "pre_sum")
-    private Integer preSum;
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "menu_id", name = "menu_id")

@@ -14,4 +14,6 @@ public interface IRecipt {
 
     List<Recipt> findByReciptDate(Timestamp reciptDate);
 
+    void save(Recipt recipt);
+
 }

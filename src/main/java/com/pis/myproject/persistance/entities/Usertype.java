@@ -1,5 +1,6 @@
 package com.pis.myproject.persistance.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,9 @@ public class Usertype {
     private String type;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "usertype")
+    @JsonIgnore
     private List<Users> users;
+
+
 
 }

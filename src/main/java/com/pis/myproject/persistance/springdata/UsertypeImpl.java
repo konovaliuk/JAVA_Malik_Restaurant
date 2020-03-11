@@ -1,12 +1,11 @@
 package com.pis.myproject.persistance.springdata;
 
+import com.pis.myproject.persistance.entities.Users;
 import com.pis.myproject.persistance.entities.Usertype;
 import com.pis.myproject.persistance.interfcs.IUsertype;
 import com.pis.myproject.persistance.repositories.UsertypeRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -27,8 +26,8 @@ public class UsertypeImpl implements IUsertype {
         return usertypeRepository.findById(typeId);
     }
 
-    public List<Usertype> findByType(String type) {
-        return usertypeRepository.findByType(type);
+    public List<Users> findByType(String type) {
+        return usertypeRepository.findByType(type).get().getUsers();
     }
 
 }
