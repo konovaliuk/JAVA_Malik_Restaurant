@@ -30,10 +30,4 @@ public class Menu {
     @JsonIgnore
     private List<Orders> orders;
 
-//    public Menu(String title, Integer price){
-//        this.title=title;
-//        this.price=price;
-//    }
-
-
 }

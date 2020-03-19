@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -34,13 +35,13 @@ public class MenuServiceImpl {
         Users client = iUsers.findByUserId(userId).orElseThrow();
         Users admin = iUsers.findByUserId(adminId).orElseThrow();
         Recipt recipt = new Recipt();
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         for(Menu mealPos : meal){
             Sum += mealPos.getPrice();
         }
         recipt.setClient(client);
         recipt.setAdmin(admin);
         recipt.setSum(Sum);
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         recipt.setReciptDate(timestamp);
         iRecipt.save(recipt);
         for(Menu mealPos : meal){
